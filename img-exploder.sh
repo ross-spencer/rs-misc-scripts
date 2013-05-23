@@ -20,8 +20,8 @@ if [ -a 'error.log' ] ; then
 	rm 'error.log'
 fi
 
-IMG_DIR='ESR-disks'
-OUT_DIR='ESR-output'
+IMG_DIR='write-exceptions'		# img dir
+OUT_DIR='write-exceptions-out'	# extracted files dir
 
 LOOP_DEV='/dev/loop0'
 MEDIA_DEV='/media/floppy1'
@@ -76,11 +76,11 @@ do
 	  	if [ -d "$g" ] || [ -a "$g" ] && [ -s "$g" ] ; then
 	  		try $(cp -r -p "$g" $target) || catch 1
 	  		if $CAUGHT ; then
-	  			echo -e "Bad file or directory KryoFlux image error: " '\t' "$f" >> error.log
+	  			echo -e "cp Error: Bad file or directory KryoFlux image error: " '\t' "$f" '\t' "$g" >> error.log
 	  			break
 	  		fi
 	  	else
-	  		echo -e "Bad file or directory KryoFlux image error: " '\t' "$f" >> error.log
+	  		echo -e "Not a Dir, Not a File, ZeroSize: Bad file or directory KryoFlux image error: " '\t' "$f" '\t' "$g" >> error.log
 	  		break
 	  	fi
 	  	  	
@@ -95,3 +95,5 @@ do
 done
 
 rm -r $DRIVE_ID
+
+echo -e '\n' "img-exploder.sh script complete." '\n'
