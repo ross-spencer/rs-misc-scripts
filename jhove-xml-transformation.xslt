@@ -14,16 +14,6 @@
 				<xsl:for-each select="jhove:repInfo" >
 				<xsl:sort select="jhove:status"/>
 				<xsl:choose>
-					<xsl:when test="jhove:status = 'Well-Formed and valid'">
-						<tr>
-							<xsl:apply-templates select="@uri"/>
-							<xsl:apply-templates select="jhove:format"/>
-							<xsl:apply-templates select="jhove:sigMatch/jhove:module"/>
-							<td style="border: 1px solid black; padding: 4px; background: 3366FF; color: #F8F8F8">
-								<xsl:value-of select="jhove:status"/>
-							</td>
-						</tr>
-					</xsl:when>
 					<xsl:when test="jhove:status = 'Well-Formed'">
 						<tr>
 							<xsl:apply-templates select="@uri"/>
@@ -34,7 +24,7 @@
 							</td>
 						</tr>
 					</xsl:when>
-					<xsl:when test="jhove:status = 'Valid'">
+					<xsl:when test="jhove:status = 'Well-Formed and valid'">
 						<tr>
 							<xsl:apply-templates select="@uri"/>
 							<xsl:apply-templates select="jhove:format"/>
@@ -59,7 +49,17 @@
 							<xsl:apply-templates select="@uri"/>
 							<xsl:apply-templates select="jhove:format"/>
 							<xsl:apply-templates select="jhove:sigMatch/jhove:module"/>
-							<td style="border: 1px solid black; padding: 4px; background: E00000; color: #F8F8F8">
+							<td style="border: 1px solid black; padding: 4px; background: FF0000; color: #FFFFFF">
+								<xsl:value-of select="jhove:status"/>
+							</td>
+						</tr>
+					</xsl:when>
+					<xsl:when test="jhove:status = 'Unknown'">
+						<tr>
+							<xsl:apply-templates select="@uri"/>
+							<xsl:apply-templates select="jhove:format"/>
+							<xsl:apply-templates select="jhove:sigMatch/jhove:module"/>
+							<td style="border: 1px solid black; padding: 4px; background: FF9900; color: #000000">
 								<xsl:value-of select="jhove:status"/>
 							</td>
 						</tr>
@@ -69,8 +69,8 @@
 							<xsl:apply-templates select="@uri"/>
 							<xsl:apply-templates select="jhove:format"/>
 							<xsl:apply-templates select="jhove:sigMatch/jhove:module"/>
-							<td style="border: 1px solid black; padding: 4px; background: E00000; color: #F8F8F8">
-								<xsl:value-of select="jhove:status"/>
+							<td style="border: 1px solid black; padding: 4px; background: #FFFF00; color: #000000">
+								<xsl:value-of select="jhove:status"/> &#160; &#160; <i>*unrecognized status*</i> &#160; &#160; 
 							</td>
 						</tr>
 					</xsl:otherwise>
@@ -99,15 +99,12 @@
 	</td>
 </xsl:template>
 
-<!-- JHOVE Status Element
-		Well-Formed, but not valid
-		Well-Formed and valid
+<!-- JHOVE Status Element JHOVE: XmlHandler.java
 		Well-Formed
-		Valid
-		
-		Unknown values:
-		
+		Well-Formed and valid
+		Well-Formed, but not valid
 		Not well-formed
+		Unknown
 -->
 
 </xsl:stylesheet>
