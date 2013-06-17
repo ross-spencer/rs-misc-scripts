@@ -13,3 +13,8 @@ as anything. Will probably need reworking in time.
 
 XSLT transormation for JHOVE 1.0. Focusing on pulling the status from an XML file output by JHOVE for easy
 human readability, outside of any format validation workflows. 
+
+###recurse-dir.bat
+
+DOS batch script to recurse a directory of files and perform a single command on them, in this case run TIKA. 
+This script outputs a path and then appends the tika extract data. 
