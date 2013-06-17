@@ -14,6 +14,7 @@ setlocal enabledelayedexpansion
 	SET /A COUNT=0
 	
 	REM Generate a timestamp #setlocal not working for !UNIQUE!
+	REM http://www.dostips.com/DtCodeSnippets.php#Snippets.UniqueString
 	FOR /f "tokens=2-8 delims=/:. " %%A IN ("%date%:%time: =0%") DO SET UNIQUE="%%C%%A%%B%%D%%E%%G%"
 
 	FOR /R %SCANDIR% %%F IN (*.*) DO (	
