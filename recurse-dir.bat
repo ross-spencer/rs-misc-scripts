@@ -22,7 +22,7 @@ setlocal enabledelayedexpansion
 		set FILENAME="%OUTDIR%!UNIQUE!-!COUNT!-%%~nF.tika"
 		echo !!UNIQUE!!
 		echo Path: %%F > !!FILENAME!!
-		java -jar tika-app-1.3.jar -m %%F >> !!FILENAME!!
+		java -jar tika-app-1.3.jar -m "%%F" >> !!FILENAME!!
 		echo Result output to !!FILENAME!!
 	)
 	
