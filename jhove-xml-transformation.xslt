@@ -4,6 +4,7 @@
 	<html>
 		<body style="font-family: arial; background: 101010; color: #E8E8E8">
 			<h2>JHOVE Status Output</h2>
+			<h3>File Count: <xsl:value-of select="count(jhove:repInfo)"/></h3>
 			<table style="border-collapse:collapse; border: 1px solid black; font-size: 12px; background: 404040; color: #E8E8E8">
 				<tr> 
 					<th style="border: 1px solid black; padding: 4px;">Path</th>
