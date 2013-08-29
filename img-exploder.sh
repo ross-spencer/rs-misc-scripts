@@ -74,7 +74,7 @@ do
 	  	target=$dname/$(basename "$g")
 	  	echo -e $target '\t' $g '\t' $(file $g) >> files.log 	
 	  	if [ -d "$g" ] || [ -a "$g" ] && [ -s "$g" ] ; then
-	  		try $(cp -r -p "$g" $target) || catch 1
+	  		try $(cp -r -p "$g" "$target") || catch 1
 	  		if $CAUGHT ; then
 	  			echo -e "cp Error: Bad file or directory KryoFlux image error: " '\t' "$f" '\t' "$g" >> error.log
 	  			break
