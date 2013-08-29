@@ -72,7 +72,7 @@ do
 	  for g in $DRIVE_ID/*
 	  do
 	  	target=$dname/$(basename "$g")
-	  	echo -e $target '\t' $g '\t' $(file $g) >> files.log 	
+	  	echo -e $target '\t' $g '\t' $(file "$g") >> files.log 	
 	  	if [ -d "$g" ] || [ -a "$g" ] && [ -s "$g" ] ; then
 	  		try $(cp -r -p "$g" "$target") || catch 1
 	  		if $CAUGHT ; then
