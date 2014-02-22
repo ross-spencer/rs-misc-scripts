@@ -21,5 +21,6 @@ This script outputs a path and then appends the tika extract data.
 
 ###dp-testing-folder-recurse.sh
 
-Bash shell script testing three methods of recursion. For OPF blog on Nailgun.
-Three methods are, Find, Globstar and then using a manifest. 
+Bash shell script testing three methods of recursion. The script displays the
+timings for the three methods. For OPF blog on Nailgun. The three methods are: 
+Find, Globstar and then using a manifest. 
