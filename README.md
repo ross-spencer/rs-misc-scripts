@@ -18,3 +18,8 @@ human readability, outside of any format validation workflows.
 
 DOS batch script to recurse a directory of files and perform a single command on them, in this case run TIKA. 
 This script outputs a path and then appends the tika extract data. 
+
+###dp-testing-folder-recurse.sh
+
+Bash shell script testing three methods of recursion. For OPF blog on Nailgun.
+Three methods are, Find, Globstar and then using a manifest. 
