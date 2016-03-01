@@ -82,7 +82,7 @@ do
 	  for g in $DRIVE_ID/*
 	  do
       #escape spaces for RSYNC like transfer
-      g=$(echo "$g" | sed 's/ /\\ /g')
+      #g=$(echo "$g" | sed 's/ /\\ /g') #TODO: Test more, not on Endeavour (bad server)
 	  	target="$dname"/$(basename "$g")
 	  	echo -e $target '\t' $g '\t' $(file "$g") >> files.log 	
 	  	if [ -d "$g" ] || [ -a "$g" ] && [ -s "$g" ] ; then
