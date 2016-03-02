@@ -3,8 +3,9 @@
 REM A script to recurse a DOS directory and perform
 REM a single command on the files it finds
 REM uses tika to find instances of word "draft"
+REM repaced by search-term-batch-script
 
-set SCANDIR="E:\live-digital-transfers-working\MBIE-18-Jan-2016\dispositions\disp_20160115143947_334133"
+set SCANDIR="E:\live-digital-transfers-working\..."
 
 echo %SCANDIR%
 
