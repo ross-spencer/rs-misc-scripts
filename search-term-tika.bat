@@ -2,6 +2,7 @@
 
 REM A script to recurse a DOS directory and perform
 REM a single command on the files it finds
+REM grep for an individual search term, e.g. seach 'confidential'
 
 set SEARCHTERM="secret"
 set SCANDIR="E:\live-digital-transfers-working\..."
