@@ -24,3 +24,8 @@ This script outputs a path and then appends the tika extract data.
 Bash shell script testing three methods of recursion. The script displays the
 timings for the three methods. For OPF blog on Nailgun. The three methods are: 
 Find, Globstar and then using a manifest. 
+
+###timecmd.bat
+
+Times a single or set of DOS commands. Useful for understanding performance in 
+a less scriptable environment such as Windows. 
